@@ -1,5 +1,5 @@
 # public_code
-This repo contains code that has been used for publications or general use
+This repo contains code that has been used for publications or personal use that I want to share
 ## 16S_OTU_table_processing
 Cntains code for initial processing of OTU tables generated form 16S data 
 ## Tree_building
