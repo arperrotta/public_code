@@ -6,4 +6,4 @@ Cntains code for initial processing of OTU tables generated form 16S data
 Contains code that supports building phylogenetic trees
 ## SVM_SVC
 Contains code for running svm classifiers including determining the C parameter, running the model, and testing the significance by permutation. 
-Also includes code for visualizing a confusion matrix, precision-recall plot, and weights of feature selection. 
+Also includes code for visualizing a confusion matrix. Visualizations for precision-recall plot and weights of feature selection to be added. 
