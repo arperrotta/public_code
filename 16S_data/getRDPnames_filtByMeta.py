@@ -9,7 +9,7 @@ import numpy as np
 from numpy import NaN
 
 #load up the RDP file that you will use for your taxonomies
-def loadRDP(file)
+def loadRDP(file):
 	columns_names=['empty1','empty2','empty3','empty4','Kingdom','Kingdom1','Kingdom_score'
                	,'Phylum','Phylum1','Phylum_score','Class','Class1','Class_score','Order','Order1'
                	,'Order_score','Family','Family1','Family_score','Genera','Genera1','Genera_score']
