@@ -1,4 +1,4 @@
-#this script takes a text file that has denovoOTU ID and corresponding RDP taxonomy (tab seperated)
+#this script takes a text file that has denovoOTU ID and corresponding RDP taxonomy (k__Kingdom;p__Phyla; ect.)
 ## and creates a tab delim file with is the OTUID and corresponding highest RDP classification
 import sys
 IN = sys.argv[1]
