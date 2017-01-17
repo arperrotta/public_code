@@ -4,12 +4,9 @@
 ## filtering a meta data dataframe so that is contains only the samples in your filtered OTU table
 ## filter out OTUs that are not present in many samples
 
-#This code was last modified on 122216
-import matplotlib.pyplot as plt
-import numpy as np
-from numpy import *
+#This code was last modified on 011717
 import pandas as pd
-
+from numpy import *
 
 
 def makeFracs(data):

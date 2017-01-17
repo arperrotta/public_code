@@ -15,7 +15,7 @@ import pandas as pd
 def dropOTU_lowAbund(data, maxread, cutoff):
 	''' 
 	This function wil remove OTUs that are below an abundance cut off from your OTU table
-	data = OTU table (columns= OTUs and index= samples) for all sampes
+	data = OTU table (columns= OTUs and index= samples) for all sampels
 	maxread = maximum read count from the counts table
 	cutoff = abundance cut off (fraction)'''
 	z = np.log(cutoff+(1/float(2))*(1/float(maxread)))
