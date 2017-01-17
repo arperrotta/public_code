@@ -13,3 +13,6 @@ Also includes code for visualizing a confusion matrix. Visualizations for precis
 
 ## randomFOrest_R
 Contains code for extracting the top 30 features from a random forest classification or regression in R
+
+## data_vis
+Contains code for basic data visualization. Currently only contains code for visualizing networks.
