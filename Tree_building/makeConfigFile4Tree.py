@@ -1,5 +1,7 @@
 #this script takes a text file that has denovoOTU ID and corresponding RDP taxonomy (k__Kingdom;p__Phyla; ect.)
-## and creates a tab delim file with is the OTUID and corresponding highest RDP classification
+## and creates a tab delim file with is the OTUID and corresponding highest RDP classification, format is similar to a fasta file
+##NOTE: This should only be used if the tree is for visualization purposes and not if true phylogenetic inferences will be made from it
+###In the later inference case avoid using a config file, get your self an out group and root your tree instead!
 import sys
 IN = sys.argv[1]
 OUT = sys.argv[2]
