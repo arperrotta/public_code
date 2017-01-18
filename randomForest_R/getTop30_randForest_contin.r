@@ -1,11 +1,12 @@
-#Get the top 30 features from a random forest regression run in R
+#Get the top 30 features from a random forest regression run in R and SLiME
 ##written using randomForest 4.6-7
 
 library(randomForest)
 a = readRDS('continData.0.rf')
 
 
-#Collect features from all three forests  
+#Collect features from all three forests 
+### In this example we have three forests, looping for more forests coming soon. 
 v1 <- a$r[[1]]$importance
 x1<-v1[order(-v1[, 1]), ]
 names1<-rownames(x1[1:30,])

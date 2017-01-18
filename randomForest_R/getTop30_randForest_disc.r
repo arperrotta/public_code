@@ -1,10 +1,11 @@
-#Get a table of the top 30 features from a random forest discrete classification model run in R
+#Get a table of the top 30 features from a random forest discrete classification model run in R and SLiME
 ##written using randomForest 4.6-7
 
 library(randomForest)
 a = readRDS('discData.0.rf')
 
-##Collect features from all three forests
+##Collect features from all forests
+### In this example we have three forests, looping for more forests coming soon.
 v1 <- a$r[[1]]$importance
 x1<-v1[order(-v1[, 3]), ]
 names1<-rownames(x1[1:30,])
@@ -24,13 +25,13 @@ n_occur <- data.frame(table(all))
 n_occur[n_occur$Freq > 1,]
 concen<-unique(all[all %in% n_occur$all[n_occur$Freq > 1]])
 
-#get %IncMSE for each feature from each forest
-mda1<-x1[concen,"%IncMSE"]
-mda2<-x2[concen,"%IncMSE"]
-mda3<-x3[concen,"%IncMSE"]
+#get MDA for each feature from each forest
+mda1<-x1[concen,"MeanDecreaseAccuracy"]
+mda2<-x2[concen,"MeanDecreaseAccuracy"]
+mda3<-x3[concen,"MeanDecreaseAccuracy"]
 vals<-data.frame(mda1,mda2,mda3)
 vals$avgMDA <- rowMeans(vals[,])
 
 #Write it up as a text file that can be fed into plotting scripts
-write.table(vals,file='disc_top30_wIncMSE.txt',sep='\t',eol='\n',row.names=TRUE,col.names=TRUE)
+write.table(vals,file='disc_top30_wMDA.txt',sep='\t',eol='\n',row.names=TRUE,col.names=TRUE)
 
