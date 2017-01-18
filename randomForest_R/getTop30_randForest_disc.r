@@ -24,13 +24,13 @@ n_occur <- data.frame(table(all))
 n_occur[n_occur$Freq > 1,]
 concen<-unique(all[all %in% n_occur$all[n_occur$Freq > 1]])
 
-#get MDA for each feature from each forest
-mda1<-x1[concen,"MeanDecreaseAccuracy"]
-mda2<-x2[concen,"MeanDecreaseAccuracy"]
-mda3<-x3[concen,"MeanDecreaseAccuracy"]
+#get %IncMSE for each feature from each forest
+mda1<-x1[concen,"%IncMSE"]
+mda2<-x2[concen,"%IncMSE"]
+mda3<-x3[concen,"%IncMSE"]
 vals<-data.frame(mda1,mda2,mda3)
 vals$avgMDA <- rowMeans(vals[,])
 
 #Write it up as a text file that can be fed into plotting scripts
-write.table(vals,file='disc_top30_wMDA.txt',sep='\t',eol='\n',row.names=TRUE,col.names=TRUE)
+write.table(vals,file='disc_top30_wIncMSE.txt',sep='\t',eol='\n',row.names=TRUE,col.names=TRUE)
 
