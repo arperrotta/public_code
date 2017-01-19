@@ -14,8 +14,7 @@ def loadRDP(file):
                	,'Phylum','Phylum1','Phylum_score','Class','Class1','Class_score','Order','Order1'
                	,'Order_score','Family','Family1','Family_score','Genera','Genera1','Genera_score']
 
-	fileR=OUT+'16Spipe_091416/RDP_classifications.txt'
-	rdp=pd.read_table(fileR, sep='\t',index_col=0,names=columns_names)
+	rdp=pd.read_table(file, sep='\t',index_col=0,names=columns_names)
 	return(rdp)
 
 def get_phylo_from_RDP(rdp, otu, cutoff):

@@ -13,11 +13,13 @@ def makeFracs(data):
     '''This function normailizes count data to generate relative fractions,
     has been tested by looking at the count of OTU/sumRead of a sample
     and making sure it is correct
-    data = otu table of read counts with columns= OTUs and index= samples 
+    data = otu table of read counts with columns= samples and index= OTUs
+    (this is how the table of counts comes out of most programs like qiime and the AlmPipe) 
     THIS NEEDS TO BE RUN BEFORE ANY OTUS ARE REMOVED WITH dropOTU_SampOccur()'''
     #make fractions 
-    data['sumRead']=data.sum(axis=1)
-    fracs = data.loc[:,:].div(data["sumRead"], axis=0)
+    data=data.T
+    data['sumRead']=data.sum(axis='columns')
+    fracs = data.loc[:,:].div(data["sumRead"], axis='index')
     fracs=fracs.drop('sumRead',axis='columns')
     return(fracs)
 
