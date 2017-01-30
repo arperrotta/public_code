@@ -12,4 +12,4 @@ Contains code for running svm classifiers including determining the C parameter,
 Also includes code for visualizing a confusion matrix. Visualizations for precision-recall plot and weights of feature selection to be added. 
 
 ## data_vis
-Contains code for basic data visualization. Currently only contains code for visualizing networks.
+Contains code for basic data visualization. Currently contains code for visualizing networks and making a seaborn clustermap with a colorbar generated from meta data.
