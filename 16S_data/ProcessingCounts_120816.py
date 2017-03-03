@@ -51,7 +51,7 @@ def filtMeta4filtData(dataF,meta):
 
 
 def dropOTU_SampOccur(dataF,num):
-    '''This function filters out OTUs that have non-zero abundance in at leats num samples
+    '''This function filters out OTUs that don't have non-zero abundance in at least num samples
     dataF = OTU table (columns= OTUs and index= samples) that 
     has already been filtered for samples of low read count
     num = number of samples you require an OTU to be > 0 in to keep it in the table'''
