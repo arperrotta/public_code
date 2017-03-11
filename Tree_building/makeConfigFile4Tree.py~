@@ -30,7 +30,7 @@ order=[]
 family=[]
 genera=[]
 #the length requirement is to make up for empty taxa levels 
-
+##this might be an issue though as now the binary string for each one will be different lengths 
 for a in tax:
 	if a[0] not in king and a[1]=='p__':
 		king.append(a[0])

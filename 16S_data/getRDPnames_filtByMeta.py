@@ -32,8 +32,9 @@ def get_phylo_from_RDP(rdp, otu, cutoff):
             # Yay, you found a thing!
             phylo_name = phylo.replace('_score','')
             phylo_assignment = rdp.loc[otu].loc[phylo_name]
+            x=phylo_name
             #print 'yaaaaay', rdp_score, phylo_assignment
-    return phylo_assignment
+    return(phylo_assignment)
 
 def select_samples_via_metadata(my_selection, metadata):
     '''
