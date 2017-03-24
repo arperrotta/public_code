@@ -5,7 +5,7 @@
 		xName - how you want to visualize your data, e.g. two different time points
 		colorName - how you want to color your data at each time point, e.g. disease verses control
 	These column names are also input to the function
-	NOTE: For an example of these plots see Scatter_plots_Eric_likes.ipynb'''
+	NOTE: For visualizing these plots see Scatter_plots_Eric_likes.ipynb'''
 import seaborn as sns
 import matplotlib.pyplot as plt
 
