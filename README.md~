@@ -11,4 +11,4 @@ Contains code that supports building phylogenetic trees
 Contains ipython notebooks for running svm classifiers and regressors on toy data. This includes: determining the C parameter, running the model, and testing the significance by permutation, and visualizing a confusion matrix.
 
 ## data_vis
-Contains code for basic data visualization. Currently contains code for visualizing networks and making a seaborn clustermap with a colorbar generated from meta data.
+Code for basic data visualization. Currently contains scripts for visualizing networks, making a seaborn clustermap with a metadata colorbar, and also a plotting function for making the scatter plots Eric Alm likes (with ipynb example).
