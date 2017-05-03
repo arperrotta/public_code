@@ -11,7 +11,7 @@ fileOUT=open(OUT,'w')
 for line in fileIN: 
     aRR.append(line)
 for item in aRR:
-    if (">" in item and "uncultured" not in item and "unidentified" not in item):
+    if (">" in item and "uncultured" not in item):
         fileOUT.write(item)
         x=aRR.index(item)
         fileOUT.write(aRR[x+1])

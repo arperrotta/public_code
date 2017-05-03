@@ -22,8 +22,10 @@ for item in aRR:
         aRR2.append(item)
 
     else:
+        print(type(item))
+        print(type(endTrim))
         x=item[:int(endTrim)+1]
-        y=x[int(begTrim):]
+        y=x[begTrim:]
         aRR2.append(y)
 
 for item in aRR2:
