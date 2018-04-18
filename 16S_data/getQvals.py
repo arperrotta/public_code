@@ -1,4 +1,4 @@
-#This script contains functions for generating q-values form a statistical test
+#This script contains functions for generating q-values from a statistical test
 ## function include those for: 
 ### abundance filtering OTUs
 ### kendall test qValues
