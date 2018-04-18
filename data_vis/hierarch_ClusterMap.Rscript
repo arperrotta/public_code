@@ -1,17 +1,16 @@
 #These plots sort samples by their OTU abundance profile similarity
 
-##Input is a phyloseq Robject
-fIn=as.character(args[1])
-
-#Output is a PNG
-fOut=as.character(args[2])
-
 library("phyloseq")
 library("reshape2")
 library("colorRamps")
 library("ggplot2")
 library("gplots")
+args = commandArgs(trailingOnly=TRUE)
 
+##Input is a phyloseq Robject
+fIn=as.character(args[1])
+#Output is a PNG
+fOut=as.character(args[2])
 
 bact=load(fIn)
 
