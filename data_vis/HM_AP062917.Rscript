@@ -1,0 +1,51 @@
+#These plots sort samples by their OTU abundance profile similarity
+
+##Input is a phyloseq Robject
+fIn=as.character(args[1])
+
+#Output is a PNG
+fOut=as.character(args[2])
+
+library("phyloseq")
+library("reshape2")
+library("colorRamps")
+library("ggplot2")
+library("gplots")
+
+
+bact=load(fIn)
+
+#Filter for visualization
+top.phyla = sort(tapply(taxa_sums(bact), tax_table(bact)[, "Phylum"], sum), TRUE)
+top.phyla = top.phyla[1:5]
+# Prune to just the most-abundant 5 phyla
+bact2 = subset_taxa(bact, Phylum %in% names(top.phyla))
+bact2 = prune_taxa(names(sort(taxa_sums(bact), TRUE)[1:200]), bact)
+
+#Make color conditions for visualizing metadata conditions
+sample_data(bact2)$treatCol <- ifelse(sample_data(bact2)$treatment == "Control", "deepskyblue", "magenta")
+
+png(fOut)
+
+opts_knit$set(fig.height = 9)
+distfun <- distance
+hclustfun <- hclust
+heatmap_col <- colorRampPalette(c("blue", "green", "orange", "red"))(128)
+heatmap.2(phyloseq_to_matrix(bact2), scale="none", col=heatmap_col, trace="none", 
+	main="Hierarchical Heatmap", cexCol=1, cexRow=0.75, cex.lab=0.2, margins=c(10,10), labRow=FALSE,
+	mgp=c(2,1,.5), ColSideColors = sample_data(bact2)$treatCol)
+legend("topright",      
+    legend = unique(sample_data(bact2)$treatment),
+    col = unique(sample_data(bact2)$treatCol), 
+    lty= 1,             
+    lwd = 5,           
+    cex=.7
+    )
+text(0.4, "OTUs", 2, 2)
+
+dev.off()
+
+
+	
+	
+

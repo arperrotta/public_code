@@ -1,0 +1,26 @@
+#!/usr/bin/env Rscript
+args = commandArgs(trailingOnly=TRUE)
+
+library("ggplot2")
+
+fIn=as.character(args[1])
+fOut=as.character(args[2])
+
+minCnt=1000
+
+#read input 
+sample_sum_df = read.table(fIn, as.is=TRUE, header=FALSE, row.names=1, sep=',')
+sample_sum_df = data.frame(sample_sum_df)
+read_thresh = log10(minCnt)
+
+png(fOut)
+
+# Histogram of sample read counts (log)
+ggplot(sample_sum_df) + aes(x = log10(V2)) + 
+  geom_histogram(color = "black", fill = "indianred", binwidth = log10(minCnt)/30) +
+  ggtitle("Distribution of sample sequencing depth") + 
+  geom_vline(xintercept = read_thresh, lty = 2) +
+  xlab("Log10(read counts)") +
+  ylab("Sample Count")
+  
+dev.off()
