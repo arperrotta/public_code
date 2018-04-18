@@ -2,7 +2,7 @@
 This repo contains code that has been used for publications or personal use that I want to share
 
 ## 16S_data
-Contains code for initial processing of OTU tables generated form 16S data 
+Contains code for initial processing of OTU tables and FASTA files generated from 16S data 
 
 ## Tree_building
 Contains code that supports building phylogenetic trees. This includes scripts for filtering and trimming reference sequences and building a configuration file.
