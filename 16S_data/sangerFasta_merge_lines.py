@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#Written by APerrotta on 4/18.18
+#Written by APerrotta on 4/18/18
 
 import sys
 import argparse
