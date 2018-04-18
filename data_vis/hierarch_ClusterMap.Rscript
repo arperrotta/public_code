@@ -1,3 +1,4 @@
+#!/usr/bin/env Rscript
 #These plots sort samples by their OTU abundance profile similarity
 args = commandArgs(trailingOnly=TRUE)
 library("phyloseq")
